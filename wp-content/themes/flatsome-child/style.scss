@@ -7,15 +7,248 @@ Version: 3.0
 */
 
 /*************** ADD CUSTOM CSS HERE.   ***************/
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Italic.woff2") format("woff2"),
+    url("assets/fonts/NotoSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-BoldItalic.woff2") format("woff2"),
+    url("assets/fonts/NotoSans-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Bold.woff2") format("woff2"),
+    url("assets/fonts/NotoSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans.woff2") format("woff2"),
+    url("assets/fonts/NotoSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+$font-primary: "Noto Sans";
+
+body,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary !important;
+}
+
+/* Device Breakpoint */
+
+$mobile-width: 576px;
+$tablet-width: 768px;
+$tablet-land-width: 1024px;
+$desktop-width: 1366px;
+$big-desktop-width: 1600px;
+
+@mixin flex-align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-land-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (min-width: #{$tablet-land-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$big-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
 // HOME PAGE
 .small-banner img {
-    margin-bottom: -3px;
+  margin-bottom: -3px;
 }
-#mega-menu-wrap {
-    width: 70%;
+
+#mega-menu-title {
+  background: var(--primary-color);
 }
-@media only screen and (max-width: 48em) {
-/*************** ADD MOBILE ONLY CSS HERE  ***************/
 
+#mega_menu {
+  li {
+    padding-left: 30px;
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 30px !important;
+      height: 30px !important;
+      position: absolute;
+      left: 10px;
+      background-image: url(assets/images/weights-line.png);
+    }
+  }
+  a {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    // font-weight: 500;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0);
+      color: var(--primary-color);
+    }
+  }
+}
 
+.slider-nav-push.slider-nav-reveal .flickity-prev-next-button svg {
+  margin-top: 0;
+}
+.slider .flickity-prev-next-button:hover svg,
+.slider .flickity-prev-next-button:hover .arrow {
+  fill: #fff !important;
+}
+.slider-nav-reveal .flickity-prev-next-button:hover,
+.slider-nav-reveal .flickity-prev-next-button {
+  width: 30px;
+  top: 25%;
+  bottom: 0;
+  /* border-radius: 20px; */
+  height: 10%;
+  background-color: var(--primary-color);
+  -webkit-box-shadow: 0 -150px 15px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 -150px 15px 0 rgba(0, 0, 0, 0);
+  margin: 0 !important;
+}
+
+.nav-center.nav-spacing-small > li {
+  margin: 0 30px;
+  a {
+    color: var(--primary-color);
+  }
+}
+
+.main-slider img {
+  padding-right: 10px;
+  @include mobile {
+    padding-right: 0px;
+  }
+  @include tablet {
+    padding-right: 0px;
+  }
+}
+.logo-brand {
+  .logo-carousel-free .sp-lc-logo {
+    border: none !important;
+  }
+}
+.title-style {
+  span {
+    border: none;
+    margin-left: 20px;
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      // background-image: url(../);
+      background-position: center;
+      background-size: contain;
+      width: 30px !important;
+      height: 30px !important;
+      position: absolute;
+      left: 0;
+      @include mobile {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+}
+
+.title-style.hot {
+  span::before {
+    background-image: url(assets/images/promotional.png);
+  }
+}
+
+// FOOTER
+/* FOOTER */
+.logo-doitac li {
+  list-style: none;
+}
+.logo-doitac ul {
+  margin-top: 26px;
+  margin-left: -26px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: -25px;
+}
+.logo-doitac ul li img {
+  max-width: 100px;
+}
+.logo-doitac.shipping img {
+  max-width: 80px;
+}
+.logo-doitac img[alt="VNPost"] {
+  max-width: 65px;
+}
+.logo-doitac .logo-tiki {
+  max-width: 70px;
+}
+
+.footer-contact ul {
+  margin-left: -20px;
+}
+.footer-contact li {
+  list-style: none;
+}
+.footer-contact li i {
+  padding: 5px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 6px;
+  text-align: center;
 }

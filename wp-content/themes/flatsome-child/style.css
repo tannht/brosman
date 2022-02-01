@@ -1,0 +1,218 @@
+/*
+Theme Name: Flatsome Child
+Description: This is a child theme for Flatsome Theme
+Author: UX Themes
+Template: flatsome
+Version: 3.0
+*/
+/*************** ADD CUSTOM CSS HERE.   ***************/
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Italic.woff2") format("woff2"), url("assets/fonts/NotoSans-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-BoldItalic.woff2") format("woff2"), url("assets/fonts/NotoSans-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans-Bold.woff2") format("woff2"), url("assets/fonts/NotoSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/NotoSans.woff2") format("woff2"), url("assets/fonts/NotoSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans" !important;
+}
+
+/* Device Breakpoint */
+.small-banner img {
+  margin-bottom: -3px;
+}
+
+#mega-menu-title {
+  background: var(--primary-color);
+}
+
+#mega_menu li {
+  padding-left: 30px;
+}
+
+#mega_menu li:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 30px !important;
+  height: 30px !important;
+  position: absolute;
+  left: 10px;
+  background-image: url(assets/images/weights-line.png);
+}
+
+#mega_menu a {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#mega_menu a:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: var(--primary-color);
+}
+
+.slider-nav-push.slider-nav-reveal .flickity-prev-next-button svg {
+  margin-top: 0;
+}
+
+.slider .flickity-prev-next-button:hover svg,
+.slider .flickity-prev-next-button:hover .arrow {
+  fill: #fff !important;
+}
+
+.slider-nav-reveal .flickity-prev-next-button:hover,
+.slider-nav-reveal .flickity-prev-next-button {
+  width: 30px;
+  top: 25%;
+  bottom: 0;
+  /* border-radius: 20px; */
+  height: 10%;
+  background-color: var(--primary-color);
+  -webkit-box-shadow: 0 -150px 15px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 -150px 15px 0 rgba(0, 0, 0, 0);
+  margin: 0 !important;
+}
+
+.nav-center.nav-spacing-small > li {
+  margin: 0 30px;
+}
+
+.nav-center.nav-spacing-small > li a {
+  color: var(--primary-color);
+}
+
+.main-slider img {
+  padding-right: 10px;
+}
+
+@media (max-width: 576px) {
+  .main-slider img {
+    padding-right: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-slider img {
+    padding-right: 0px;
+  }
+}
+
+.logo-brand .logo-carousel-free .sp-lc-logo {
+  border: none !important;
+}
+
+.title-style span {
+  border: none;
+  margin-left: 20px;
+}
+
+.title-style span:before {
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 30px !important;
+  height: 30px !important;
+  position: absolute;
+  left: 0;
+}
+
+@media (max-width: 576px) {
+  .title-style span:before {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+.title-style.hot span::before {
+  background-image: url(assets/images/promotional.png);
+}
+
+/* FOOTER */
+.logo-doitac li {
+  list-style: none;
+}
+
+.logo-doitac ul {
+  margin-top: 26px;
+  margin-left: -26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  margin-bottom: -25px;
+}
+
+.logo-doitac ul li img {
+  max-width: 100px;
+}
+
+.logo-doitac.shipping img {
+  max-width: 80px;
+}
+
+.logo-doitac img[alt="VNPost"] {
+  max-width: 65px;
+}
+
+.logo-doitac .logo-tiki {
+  max-width: 70px;
+}
+
+.footer-contact ul {
+  margin-left: -20px;
+}
+
+.footer-contact li {
+  list-style: none;
+}
+
+.footer-contact li i {
+  padding: 5px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  margin-right: 6px;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
